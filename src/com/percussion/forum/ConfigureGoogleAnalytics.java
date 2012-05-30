@@ -51,6 +51,7 @@ public class ConfigureGoogleAnalytics implements Controller {
 				} catch (Exception e){
 					e.printStackTrace();
 				}
+				// TODO: Pass off to Google for authorization code
 				return null;
 			} else {
 				getConfiguration();
