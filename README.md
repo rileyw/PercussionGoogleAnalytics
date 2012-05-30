@@ -11,7 +11,7 @@ Reference the [issue board](https://github.com/rileyw/PercussionGoogleAnalytics/
 ## End notes
 Percussion&copy; does offer a [WebTrends Analytics&trade; Solution](http://www.percussion.com/Assets/www.percussion.com/resources/available-resources/product-information/Percussion-WebTrends-Analytics-Solution.pdf). 
 
-*This project does not aim to integrate with this solution.*
+*This project does not aim to directly compete with this solution.*
 
 [Percussion CM System](http://www.percussion.com/) is an enterprise web content management platform that helps businesses, government agencies, and organizations power cutting-edge websites, reusing content from many sources across multiple sites and channels to improve their interactions with customers.
 
