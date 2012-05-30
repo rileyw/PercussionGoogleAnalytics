@@ -8,6 +8,7 @@ A [thread](http://forum.percussion.com/showthread.php?11097-github-plugin-Google
 ## TODO
 Reference the [issue board](https://github.com/rileyw/PercussionGoogleAnalytics/issues)
 
+## End notes
 Percussion&copy; does offer a [WebTrends Analytics&trade; Solution](http://www.percussion.com/Assets/www.percussion.com/resources/available-resources/product-information/Percussion-WebTrends-Analytics-Solution.pdf). 
 
 *This project does not aim to integrate with this solution.*
