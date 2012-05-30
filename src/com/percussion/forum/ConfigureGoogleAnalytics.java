@@ -23,9 +23,9 @@ import com.percussion.webservices.content.PSContentWsLocator;
 public class ConfigureGoogleAnalytics implements Controller {
 	
 	private IPSGuid selectedId = null;
-	private IPSContentWs IPSContentWs;
-	private IPSGuidManager IPSGuidManager;
-	private Map<String,String> properties = new HashMap<String,String>();
+	private IPSContentWs IPSContentWs = null;
+	private IPSGuidManager IPSGuidManager = null;
+	private Map<String,String> properties = null;
 	
 
 	@Override
@@ -51,8 +51,11 @@ public class ConfigureGoogleAnalytics implements Controller {
 				} catch (Exception e){
 					e.printStackTrace();
 				}
-				// TODO: Pass off to Google for authorization code
-				return null;
+				ModelAndView model = new ModelAndView("getAuthorizationCode");
+				model.addObject("client_id",arg0.getParameter("client_id").toString().trim());
+				model.addObject("sys_contentid",arg0.getParameter("sys_contentid").toString().trim());
+				model.addObject("redirect_uri",arg0.getRequestURL());
+				return model;				
 			} else {
 				getConfiguration();
 				if(properties.get("client_id")!=null && properties.get("client_secret")!=null){
@@ -77,11 +80,12 @@ public class ConfigureGoogleAnalytics implements Controller {
 	
 	public void setSelectedId(IPSGuid id) {
 		if(id != null)
-			this.selectedId = id;
+			selectedId = id;
+		System.out.println(selectedId);
 	}
 	
 	public IPSGuid getSelectedId(){
-		return this.selectedId;
+		return selectedId;
 	}
 	
 	public void setConfiguration(String client_id, String client_secret) throws Exception {
@@ -108,6 +112,7 @@ public class ConfigureGoogleAnalytics implements Controller {
 		folderIds.add(getSelectedId());
 		List<PSFolder> folders;
 		try {
+			properties = new HashMap<String,String>();
 			folders = IPSContentWs.loadFolders(folderIds);
 			PSFolder main = folders.get(0);
 			if(main.getPropertyValue("client_id")!=null)
