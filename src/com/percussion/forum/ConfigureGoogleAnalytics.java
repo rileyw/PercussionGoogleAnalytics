@@ -213,6 +213,9 @@ public class ConfigureGoogleAnalytics implements Controller {
 			if (main.getPropertyValue("access_token") != null)
 				properties.put("access_token",
 						main.getPropertyValue("access_token"));
+			if (main.getPropertyValue("refresh_token") != null)
+				properties.put("refresh_token",
+						main.getPropertyValue("refresh_token"));
 		} catch (PSErrorResultsException e) {
 			e.printStackTrace();
 		}
