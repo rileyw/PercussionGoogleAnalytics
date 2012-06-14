@@ -72,7 +72,9 @@ public class ViewTopContent implements Controller {
 																.get("refresh_token")
 																.toString())))
 				.build();
-
+/**
+ * Rough example on how to query data. Properties will transition to a global state set on the folder
+ */
 		GaData gaData = analytics.data().ga()
 				.get("ga:9852497", "2012-01-01", "2012-01-02", "ga:visits")
 				.setDimensions("ga:source").setMaxResults(25).execute();
